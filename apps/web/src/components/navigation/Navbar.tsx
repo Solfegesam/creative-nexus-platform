@@ -1,16 +1,19 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Container from "@/components/common/Container";
 
 const links = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Contact", path: "/contact" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Portfolio", path: "/portfolio" },
+  { label: "Contact", path: "/contact" },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
+      <Container className="flex h-20 items-center justify-between">
         <Link
           to="/"
           className="text-2xl font-bold text-yellow-400"
@@ -18,29 +21,18 @@ export default function Navbar() {
           Creative Nexus
         </Link>
 
-        <div className="hidden gap-8 md:flex">
+        <nav className="flex items-center gap-8">
           {links.map((link) => (
-            <NavLink
+            <Link
               key={link.path}
               to={link.path}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-yellow-400 font-medium"
-                  : "text-slate-300 hover:text-yellow-400 transition"
-              }
+              className="transition hover:text-yellow-400"
             >
-              {link.name}
-            </NavLink>
+              {link.label}
+            </Link>
           ))}
-        </div>
-
-        <Link
-          to="/contact"
-          className="rounded-lg bg-yellow-400 px-5 py-2 font-semibold text-black transition hover:bg-yellow-300"
-        >
-          Start Project
-        </Link>
-      </div>
-    </nav>
+        </nav>
+      </Container>
+    </header>
   );
 }

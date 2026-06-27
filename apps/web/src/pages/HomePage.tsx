@@ -1,11 +1,13 @@
-import Hero from "../components/sections/Hero";
-import Services from "../components/sections/Services";
-import Portfolio from "../components/sections/Portfolio";
+import Hero from "../components/home/Hero";
+import WhoWeAre from "../components/home/WhoWeAre";
+import Services from "../components/home/Services";
+import Portfolio from "../components/home/Portfolio";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <WhoWeAre />
       <Services />
       <Portfolio />
     </>

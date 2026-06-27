@@ -1,7 +1,3 @@
 export default function AboutPage() {
-  return (
-    <section className="mx-auto max-w-7xl px-6 py-24">
-      <h1 className="text-5xl font-bold">About Us</h1>
-    </section>
-  );
+  return <h1 className="p-20 text-5xl">About</h1>;
 }

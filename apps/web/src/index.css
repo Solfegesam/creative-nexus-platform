@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* -------------------------
+   Base
+-------------------------- */
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,7 +11,7 @@ html {
 body {
   margin: 0;
   background: #020617;
-  color: white;
+  color: #ffffff;
   font-family:
     Inter,
     system-ui,
@@ -19,10 +23,42 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button {
   cursor: pointer;
+}
+
+/* -------------------------
+   Reusable Utility Classes
+-------------------------- */
+
+.section {
+  @apply py-24;
+}
+
+.hero-section {
+  @apply py-32;
+}
+
+.container-custom {
+  @apply mx-auto max-w-7xl px-6;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-800 bg-slate-900;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:border-yellow-400;
+}
+
+.section-title {
+  @apply text-4xl font-bold;
+}
+
+.text-muted {
+  @apply text-slate-400;
 }

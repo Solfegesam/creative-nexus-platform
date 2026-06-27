@@ -1,0 +1,29 @@
+type SectionTitleProps = {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+};
+
+export default function SectionTitle({
+  title,
+  subtitle,
+  centered = true,
+}: SectionTitleProps) {
+  return (
+    <div
+      className={
+        centered ? "text-center" : "text-left"
+      }
+    >
+      <h2 className="text-4xl font-bold">
+        {title}
+      </h2>
+
+      {subtitle && (
+        <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+}
